@@ -17,7 +17,7 @@ public class ReflexionSauve {
 		
 		String fichier = "monpoint1.txt";
 		String fichier2 = "mapersonne1.txt";
-		String fichier3 = "moncercle1.txt";
+		String fichier3 = "moncercle2.txt";
 		
 		sauve(p, fichier);
 		sauve(per, fichier2); 

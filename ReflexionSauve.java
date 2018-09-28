@@ -21,7 +21,7 @@ public class ReflexionSauve {
 		
 		sauve(p, fichier);
 		sauve(per, fichier2); 
-		sauve(c, fichier3);
+		sauve(c, fichier3); 
 	}
 	
 	public static void sauve(Object objet, String nomFichier){

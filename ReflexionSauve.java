@@ -9,20 +9,38 @@ import java.lang.reflect.Method;
 import java.util.regex.Pattern;
 
 public class ReflexionSauve {
-
+	
+	public static int id=1;
+	
 	public static void main(String[] args) {
 		
+		
+		//les sommets du triangle
 		Point p = new Point(2,3);
-		Personne per = new Personne("Yassine", "Tahri", 175, 76, 'm');
-		Cercle c = new Cercle(p, 30);
+		Point p2 = new Point(5,6);
+		Point p3 = new Point(7,5);
 		
-		String fichier = "monpoint1.txt";
-		String fichier2 = "mapersonne1.txt";
-		String fichier3 = "moncercle1.txt";
+		//les droites du triangle
+		Droite d1 = new Droite(p,p2);
+		Droite d2 = new Droite(p2,p3);
+		Droite d3 = new Droite(p3,p);
 		
-		sauveRecursif(p, fichier);
-		sauveRecursif(per, fichier2); 
-		sauveRecursif(c, fichier3);
+		//objets
+//		Personne per = new Personne("Yassine", "Tahri", 175, 76, 'm');
+//		Cercle c = new Cercle(p, 30);
+		Triangle t = new Triangle(d1, d2, d3);
+		
+		
+		
+//		String fichier = "monPoint1.txt";
+//		String fichier2 = "maPersonne1.txt";
+//		String fichier3 = "monCercle1.txt";
+		String fichier4 = "monTriangle1.txt";
+		
+//		sauveRecursif(p, fichier);
+//		sauveRecursif(per, fichier2); 
+//		sauveRecursif(c, fichier3);
+		sauveRecursif(t, fichier4);
 		
 //		sauveSimple(p, fichier);
 //		sauveSimple(per, fichier2); 
@@ -70,7 +88,7 @@ public class ReflexionSauve {
 			String[] comment = objet.getClass().getName().split(Pattern.quote("."));
 			writer.println("Données pour créer une instance de : "+ comment[comment.length-1]);
 			writer.println(objet.getClass());
-			int id=0;
+
 			for (Field ch : champs){
 				try {
 					String classe = ch.getType().toString();
